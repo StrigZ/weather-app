@@ -1,5 +1,5 @@
 {
-  "name": "webpack-template",
+  "name": "we.there",
   "version": "1.0.0",
   "main": "./src/js/index.js",
   "scripts": {
