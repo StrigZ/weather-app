@@ -25,6 +25,7 @@ button {
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
+  font-weight: 600;
 }
 h1 {
   color: var(--color-background);
@@ -48,6 +49,7 @@ form {
     border: 1px solid var(--color-surface);
     padding: 8px 12px;
     border-radius: 8px;
+    font-weight: 600;
   }
 }
 
