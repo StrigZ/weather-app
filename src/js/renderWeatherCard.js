@@ -56,7 +56,7 @@ export function renderWeatherCard({
   const feelsLikeContainer = document.createElement('p')
   feelsLikeContainer.className = 'feelslike'
   const feelsLikeSpan = document.createElement('span')
-  feelsLikeSpan.textContent = `${feelsLike} °C`
+  feelsLikeSpan.textContent = `${getTemp(feelsLike)} °C`
   feelsLikeContainer.textContent = 'Feels like: '
   feelsLikeContainer.append(feelsLikeSpan)
   stats.appendChild(feelsLikeContainer)
