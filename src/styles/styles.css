@@ -77,6 +77,14 @@ form {
     font-weight: 500;
   }
   .conditions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: space-evenly;
+    > img {
+      width: 50px;
+      aspect-ratio: 1;
+    }
   }
   .stats {
     display: flex;
