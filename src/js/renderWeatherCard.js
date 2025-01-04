@@ -1,3 +1,6 @@
+import { currentUnits } from '../js/index'
+import { convertToCelsius } from './utility'
+
 export function renderWeatherCard({
   resolvedAddress,
   description,
@@ -29,7 +32,7 @@ export function renderWeatherCard({
   container.append(header)
   const tempContainer = document.createElement('p')
   tempContainer.className = 'temp'
-  tempContainer.textContent = `${temp} °C`
+  tempContainer.textContent = `${getTemp(temp)} °C`
   container.appendChild(tempContainer)
 
   const conditionsContainer = document.createElement('p')
@@ -79,4 +82,11 @@ export function renderWeatherCard({
 
 async function getIcon(iconName) {
   return await import(`../assets/icons/${iconName}.svg`)
+}
+
+function getTemp(temp) {
+  if (currentUnits === 'celsius') {
+    return convertToCelsius(temp)
+  }
+  return temp
 }
