@@ -35,6 +35,11 @@ export function renderWeatherCard({
   const conditionsContainer = document.createElement('p')
   conditionsContainer.className = 'conditions'
   conditionsContainer.textContent = conditions
+  const conditionIcon = document.createElement('img')
+  conditionIcon.src =
+    'https://cdn.iconscout.com/icon/free/png-512/free-loading-icon-download-in-svg-png-gif-file-formats--the-best-icons-for-modern-web-pack-miscellaneous-460469.png?f=webp&w=256'
+  getIcon(icon).then((src) => (conditionIcon.src = src.default))
+  conditionsContainer.append(conditionIcon)
   container.appendChild(conditionsContainer)
 
   const descriptionContainer = document.createElement('p')
@@ -70,4 +75,8 @@ export function renderWeatherCard({
   stats.appendChild(windspeedContainer)
 
   container.appendChild(stats)
+}
+
+async function getIcon(iconName) {
+  return await import(`../assets/icons/${iconName}.svg`)
 }
